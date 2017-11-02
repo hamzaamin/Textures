@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\category;
+use Illuminate\Support\facades\schema;
 use Illuminate\Support\ServiceProvider;
 use View;
 class AppServiceProvider extends ServiceProvider
@@ -14,6 +15,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        schema::defaultStringLength(191);
         $cat=category::all();
         View::share('category',$cat);
     }

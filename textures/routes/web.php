@@ -30,8 +30,7 @@ Route::get('/admin/addSubCategory','admincontroller@subcategory');
 Route::get('/admin/addProduct','admincontroller@product');
 
 Route::get('/subcategory/{subcategoryname}','Homepage@index');
-
-
+Route::get('/adminlogin','admincontroller@login');
 
 Route::get('/adminpanel','admincontroller@adminPanel');
 
@@ -39,3 +38,7 @@ Route::get('/admin/privacyPolicy','admincontroller@privacyPolicy');
 Route::get('/admin/people','admincontroller@people');
 
 Route::get('/student/read-data','admincontroller@readData');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

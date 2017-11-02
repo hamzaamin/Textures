@@ -3,11 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-//use Illuminate\Notifications\Notifiable;
-//use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Auth\Authenticatable as AuthenticableTrait;
 
-class User extends Model
+class User extends Eloquent implements Authenticatable
 {
+    use AuthenticableTrait;
    //use Notifiable;
 
     /**
@@ -28,6 +28,7 @@ class User extends Model
       //  'password', 'remember_token',
     //]
     //;
-    protected  $table='User';
+    protected  $table='users';
+    protected $fillable = ['name', 'email', 'password'];
 
 }

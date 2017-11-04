@@ -8,7 +8,13 @@ use DB;
 
 class admincontroller extends Controller
 {
-   public function store(request $request)
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index', 'show']]);
+    }
+
+    public function store(request $request)
    {
 
        if ($request->hasFile('image'))

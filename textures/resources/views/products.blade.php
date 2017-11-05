@@ -20,7 +20,8 @@
                 Add a Product
             </div>
             <div class="panel panel-body">
-
+                <form action="addnewproduct" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
                 <div class="col-md-3"style="float: left">
                     <label for="categoryname">Category Name </label>
                     <br/>
@@ -34,7 +35,7 @@
                 <div class="col-md-3">
                     <label for="subcategory">SubCategoryName </label>
                     <br/>
-                    <select name="categorylist"  id="chosencategory">
+                    <select name="subcategorylist"  id="chosencategory">
                         @foreach($subcatgorylist as$subcat)
                             <option value={{$subcat->id}}>{{$subcat->name}}</option>
                         @endforeach
@@ -44,26 +45,26 @@
                 <div class="col-md-3">
                     <label for="subcategory">Product Name </label>
                     <br/>
-                    <input type="text">
+                    <input type="text" name="product">
                 </div>
 
 
 
                 <div class="col-md-3">
-                    <form action="/action_page.php">
+
                         <label for="imageselect">Select Pitcure</label>
                         <input type="file" name="pic" accept="image/*">
 
-                    </form>
+
 
 
                 </div>
                 <div class="pull-right">
-                    <button id="categorysave" class="btn btn-primary" style="border-radius: 2px">Save</button>
+                    <button id="categorysave" type="submit" class="btn btn-primary" style="border-radius: 2px">Save</button>
                     <button id="categorycancel"class="btn btn-warning" style="border-radius: 2px">Cancel</button>
                 </div>
 
-
+                </form>
             </div>
         </div>
         <div class="panel panel-primary">
@@ -81,26 +82,30 @@
                             <th>Edit</th>
                             <th> Id</th>
                             <th> Name</th>
+                            <th> categoryid</th>
                             <th> Subcategoryid</th>
                             <th style="color:red">Delete</th>
 
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($subcatgorylist as $subcat)
+                        @foreach($productslist as $product)
                             <tr>
                                 <td>
                                     <button class="fa fa-pencil"></button>
                                 </td>
 
                                 <td>
-                                    {{$subcat->id}}
+                                    {{$product->id}}
                                 </td>
                                 <td>
-                                    {{$subcat->name}}
+                                    {{$product->Name}}
                                 </td>
                                 <td>
-                                    {{$subcat->categoryID}}
+                                    {{$product->categoryid}}
+                                </td>
+                                <td>
+                                    {{$product->subcategoryid}}
                                 </td>
                                 <td>
                                     <button class="fa fa-trash" style="color:red"></button>

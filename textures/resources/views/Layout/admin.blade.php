@@ -6,6 +6,7 @@
     <title>AdminLTE 2 | Dashboard</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+
     <!-- Bootstrap 3.3.7 -->
     <link rel="stylesheet" href="/js/bower_components/bootstrap/dist/css/bootstrap.min.css">
     <!-- Font Awesome -->
@@ -30,7 +31,7 @@
     <script type="text/javascript" src="/js/jquery.min.js"></script>
     <script type="text/javascript" src="/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="/js/jquery.form.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
     <script src="/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="/css/jquery.dataTables.min.css">
 
@@ -198,15 +199,13 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 3 -->
-<script src="js/bower_components/jquery/dist/jquery.min.js"></script>
+<script type=text/javascript src="js/bower_components/jquery/dist/jquery.min.js"></script>
+
 <!-- jQuery UI 1.11.4 -->
 <script src="js/bower_components/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-    $.widget.bridge('uibutton', $.ui.button);
-</script>
 <!-- Bootstrap 3.3.7 -->
-<script src="js/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 <!-- Morris.js charts -->
 <script src="js/bower_components/raphael/raphael.min.js"></script>
 <script src="js/bower_components/morris.js/morris.min.js"></script>
@@ -234,5 +233,6 @@
 <script src="js/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="js/dist/js/demo.js"></script>
+<script src="js/jquery.canvasjs.min.js"></script>
 </body>
 </html>

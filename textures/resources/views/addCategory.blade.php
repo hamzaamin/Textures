@@ -47,7 +47,7 @@
 
 
     <br> <br> <br>
-    <form style="margin-left:45%" action="/admin" enctype="multipart/form-data" method="post">
+    <form  action="/admin"  method="post">
 
         {{csrf_field()}}
 

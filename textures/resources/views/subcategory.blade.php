@@ -20,6 +20,8 @@
                 Add a Subcategory
             </div>
             <div class="panel panel-body">
+                <form action="addnewsubcategory" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
 
                 <div class="col-md-4"style="float: left">
                     <label for="categoryname">Category Name </label>
@@ -34,26 +36,27 @@
                 <div class="col-md-4">
                     <label for="subcategory">SubCategoryName </label>
                     <br/>
-                    <input type="text">
+                    <input type="text" name="subcategory">
                 </div>
 
 
 
                 <div class="col-md-4">
-                    <form action="/action_page.php">
+
                         <label for="imageselect">Select Pitcure</label>
                         <input type="file" name="pic" accept="image/*">
 
-                    </form>
+
 
 
                 </div>
+
                 <div class="pull-right">
-                    <button id="categorysave" class="btn btn-primary" style="border-radius: 2px">Save</button>
+                    <button id="categorysave" type="submit" class="btn btn-primary" style="border-radius: 2px">Save</button>
                     <button id="categorycancel"class="btn btn-warning" style="border-radius: 2px">Cancel</button>
                 </div>
 
-
+                </form>
             </div>
         </div>
         <div class="panel panel-primary">

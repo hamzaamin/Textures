@@ -213,11 +213,32 @@ class admincontroller extends Controller
     public function adminPanel()
     {
 
-        return view ('admindashboard');
+        return view ('adminpanell');
 
     }
 
+    public function getallcategories()
+    {
+        $cat=new category();
+        $cat=$cat::all();
+        return response($cat->toArray());
+    }
+    public function getallsubcategories()
+    {
+        $subcat=new subcategory();
+        $subcat=$subcat::all();
+        return response($subcat->toArray());
+    }
+    public function getallproducts()
+    {
+        $cat=category::count();
+        $subcat=category::count();
+        $products=product::count();
 
+
+        return response()->json(['categories' => $cat, 'subcategories' => $subcat,'products' => $products]);
+
+    }
     public function people()
     {
 

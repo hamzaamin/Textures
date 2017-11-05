@@ -52,7 +52,7 @@
     <div id="header" col-md-12 >
         <div class="logo" col-md-4>
             <a href="http://www.textures.com">
-                    <img src="{{URL::asset('/storage/Images/textureslogo.png')}}" alt="profile Pic" width="234" height="60" class="img-responsive">
+                    <img src="{{    URL::to('/Images/textureslogo.png')}}" alt="profile Pic" width="234" height="60" class="img-responsive">
             </a>
         </div>
         <div class="navigation" col-md-8>

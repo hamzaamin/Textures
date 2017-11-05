@@ -10,7 +10,7 @@
                 <br/>
                 <a href="{{ url('/category/'.$cat->name) }}">
                     <div style="position:relative;width:100%;height:100%">
-                        <img src="{{URL::asset('storage/Images/'.$cat->pitcure)}}"width="97" height="97" border="0">
+                        <img src="{{ URL::to('/Images/'.$cat->pitcure)}}"width="97" height="97" border="0">
                         <div class="transition_background"></div>
 
                     </div>

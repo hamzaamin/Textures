@@ -13,41 +13,89 @@
             <li class="active">Dashboard</li>
         </ol>
     </section>
+    <section class="content">
 
-    <head>
-        <script>
-            window.onload = function () {
+<div>
+            <div id="overall" style="float:left"></div>
+            <div id="catsubcat" style="float:right; margin-right:505px"></div>
+</div>
 
-                var chart = new CanvasJS.Chart("chartContainer", {
-                    animationEnabled: true,
-                    title:{
-                        text: "Email Categories",
-                        horizontalAlign: "left"
-                    },
-                    data: [{
-                        type: "doughnut",
-                        startAngle: 60,
-                        //innerRadius: 60,
-                        indexLabelFontSize: 17,
-                        indexLabel: "{label} - #percent%",
-                        toolTipContent: "<b>{label}:</b> {y} (#percent%)",
-                        dataPoints: [
-                            { y: 67, label: "Inbox" },
-                            { y: 28, label: "Archives" },
-                            { y: 10, label: "Labels" },
-                            { y: 7, label: "Drafts"},
-                            { y: 15, label: "Trash"},
-                            { y: 6, label: "Spam"}
-                        ]
-                    }]
-                });
-                chart.render();
 
-            }
-        </script>
-    </head>
-    <body>
-    <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-    </body>
+
+    </section>
+
+    <script>
+
+       $("document").ready(function() {
+
+
+           $.ajax({
+               type: "GET",
+               url: "./getallproducts",
+               data: "",
+               success: function (data) {
+
+
+                   var chart = new CanvasJS.Chart("overall", {
+                       animationEnabled: true,
+                       title:{
+                           text: "Overall",
+                           horizontalAlign: "left"
+                       },
+                       data: [{
+                           type: "doughnut",
+                           startAngle: 60,
+                           //innerRadius: 60,
+                           indexLabelFontSize: 15,
+                           indexLabel: "{label}",
+
+                           dataPoints: [
+                               { y: data.categories, label: "Categories" },
+                               { y: data.subcategories, label: "Subcategories" },
+                               { y: data.products, label: "Products" }
+
+                           ]
+                       }]
+                   });
+                   var chart2 = new CanvasJS.Chart("catsubcat", {
+                       animationEnabled: true,
+                       title:{
+                           text: "Categories/Subcategories",
+                           horizontalAlign: "left"
+                       },
+                       data: [{
+                           type: "doughnut",
+                           startAngle: 60,
+                           //innerRadius: 60,
+                           indexLabelFontSize: 15,
+                           indexLabel: "{label}",
+
+                           dataPoints: [
+                               { y: data.categories, label: "Categories" },
+                               { y: data.subcategories, label: "Subcategories" }
+
+
+                           ]
+                       }]
+                   });
+
+                   chart.render();
+                   chart2.render();
+
+
+               }
+
+           });
+
+
+       });
+
+
+
+
+
+
+    </script>
     </html>
+
 @endsection

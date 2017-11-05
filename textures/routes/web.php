@@ -7,7 +7,7 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('getcategories','Homepage@getcat');
 //Route::get('getsubcat','Indexing@getsubcategories');
     Route::get('/',function() {
-        return view("canvasjs");
+        return view("homepage");
     });
 
     Route::get('/category/{categoryname}','Homepage@getsubcat');
@@ -43,7 +43,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::get('/admin/people','admincontroller@people');
 
     Route::get('/student/read-data','admincontroller@readData');
-
+    Route::get('getallcategories','admincontroller@getallcategories');
+    Route::get('getallproducts','admincontroller@getallproducts');
+    Route::get('getallsubcategories','admincontroller@getallsubcategories');
 
 
     Route::get('/home', 'HomeController@index')->name('home');
@@ -52,5 +54,8 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('/admin/addnewsubcategory','admincontroller@addnewsubcategory');
     Route::post('/admin/addnewproduct','admincontroller@addnewproduct');
 
-
+    Route::get('/logout',function()
+    {
+        return view("auth.login");
+    });
 });

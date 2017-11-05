@@ -73,17 +73,17 @@
 
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-                            <span class="hidden-xs">Alexander Pierce</span>
+                            <img src="{{URL::to('/Images/images.jpg')}}" class="user-image" alt="User Image">
+                            <span class="hidden-xs">Test User</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
-                                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                <img src="{{URL::to('/Images/images.jpg')}}" class="user-image" alt="User Image">
 
                                 <p>
-                                    Alexander Pierce - Web Developer
-                                    <small>Member since Nov. 2012</small>
+                                    Test User
+
                                 </p>
                             </li>
 
@@ -92,7 +92,7 @@
                                     <a href="#" class="btn btn-default btn-flat">Profile</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                    <a href={{ url('/')}} class="btn btn-default btn-flat">Sign out</a>
                                 </div>
                             </li>
                         </ul>
@@ -109,10 +109,10 @@
             <!-- Sidebar user panel -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <img src={{URL::to('/Images/images.jpg')}} class="img-circle" alt="User Image">
                 </div>
                 <div class="pull-right" style="color:whitesmoke">
-                    User Name
+                  Test User
                 </div>
             </div>
 
@@ -120,7 +120,7 @@
             <ul class="sidebar-menu" data-widget="tree">
 
                 <li class="treeview">
-                    <a href="/admin/addCategory">
+                    <a href="/adminpanel">
                         <i class="fa fa-dashboard"></i> <span>Dashboard</span>
 
                     </a>
